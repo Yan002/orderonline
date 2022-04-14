@@ -1,0 +1,11 @@
+#在读取configserver是就根据order和dev读取 整合起来就读取到shared下的order-dev
+spring:
+  application:
+    name: order
+  profiles:
+    active: dev
+#链接server的端口
+  cloud:
+    config:
+      uri: http://localhost:8762
+      fail-fast: true #是否启动快速失败功能，功能开启则优先判断config server是否正常
